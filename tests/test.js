@@ -1,7 +1,7 @@
-import nzzFrontend from '../index.js';
+import example from '../index.js';
 
-describe(`nzz`, function () {
+describe(`example test`, function () {
     it(`should test something`, function () {
-        expect(nzzFrontend()).to.equal(2);
+        expect(example()).to.equal(2);
     });
 });

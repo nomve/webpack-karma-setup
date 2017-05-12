@@ -1,6 +1,11 @@
 // Karma configuration
 // Generated on Fri May 12 2017 09:55:56 GMT+0200 (CEST)
 /* eslint-env node */
+const webpack = require('./webpack.config');
+// karma-webpack adds entries based on the files to load array
+// e.g. for every test one entry
+delete webpack.entry;
+
 module.exports = function(config) {
     config.set({
 
@@ -24,21 +29,7 @@ module.exports = function(config) {
         ],
 
 
-        webpack: {
-            module: {
-                rules: [
-                    {
-                        enforce: `pre`,
-                        test: /\.js$/,
-                        loader: `eslint-loader`,
-                        options: {
-                            failOnWarning: false,
-                            failOnError: true
-                        }
-                    }
-                ]
-            }
-        },
+        webpack,
 
 
         // preprocess matching files before serving them to the browser
