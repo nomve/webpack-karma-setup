@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Fri May 12 2017 09:55:56 GMT+0200 (CEST)
 /* eslint-env node */
-const webpack = require('./webpack.config');
+const webpack = require(`./webpack.config`);
 // karma-webpack adds entries based on the files to load array
 // e.g. for every test one entry
 delete webpack.entry;
