@@ -7,7 +7,7 @@ const webpack = require(`./webpack.config`);
 delete webpack.entry;
 
 module.exports = function(config) {
-    config.set({
+    const configuration = {
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: ``,
@@ -79,5 +79,13 @@ module.exports = function(config) {
         // Concurrency level
         // how many browser should be started simultaneous
         concurrency: Infinity
-    });
+    };
+
+    if (process.env.CI) { 
+        configuration.browsers = [`Chrome`, `Firefox`]; 
+        configuration.concurrency = 1;
+        configuration.singleRun = true;
+    }
+
+    config.set(configuration);
 };
