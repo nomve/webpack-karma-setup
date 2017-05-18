@@ -14,9 +14,8 @@ install:
   - npm install
 
 script:
+  - which firefox
   - firefox --version
-  - which firefox-bin
-  - firefox-bin --version
   - which google-chrome
   - google-chrome --version
   - npm run test
