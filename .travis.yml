@@ -14,8 +14,6 @@ install:
   - npm install
 
 script:
-  - alias firefox-bin='firefox'
-  - which firefox
   - firefox --version
   - which firefox-bin
   - firefox-bin --version
