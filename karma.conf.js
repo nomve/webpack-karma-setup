@@ -33,7 +33,7 @@ module.exports = function(config) {
         ],
 
 
-        webpackConfig,
+        webpack: webpackConfig,
 
 
         webpackMiddleware: {
