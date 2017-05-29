@@ -29,10 +29,5 @@
         "browser": true,
         "mocha": true
     },
-    "globals": {
-        "chai": true,
-        "sinon": true,
-        "expect": true
-    },
     "extends": "eslint:recommended"
 }
