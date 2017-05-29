@@ -3,7 +3,7 @@ const path = require(`path`);
 const npmPackage = require(`./package.json`);
 const browsers = [
     `last 2 versions`,
-    `Explorer >= 10`,
+    `Explorer >= 11`,
     `Edge >= 12`,
     `iOS >= 8`
 ];
