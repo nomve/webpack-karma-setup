@@ -1,10 +1,14 @@
 // Karma configuration
 // Generated on Fri May 12 2017 09:55:56 GMT+0200 (CEST)
 /* eslint-env node */
-const webpack = require(`./webpack.config`);
+const webpackConfig = require(`./webpack.config`);
 // karma-webpack adds entries based on the files to load array
 // e.g. for every test one entry
-delete webpack.entry;
+delete webpackConfig.entry;
+if (!process.env.CI) {
+    const eslintLoader = webpackConfig.module.rules.filter(rule => rule.loader === `eslint-loader`)[0];
+    eslintLoader.options.failOnError = false;
+}
 
 module.exports = function(config) {
     const configuration = {
@@ -29,7 +33,7 @@ module.exports = function(config) {
         ],
 
 
-        webpack,
+        webpackConfig,
 
 
         webpackMiddleware: {
