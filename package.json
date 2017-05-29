@@ -4,7 +4,8 @@
   "description": "description of an example project",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "build": "webpack"
   },
   "author": "",
   "license": "UNLICENSED",
