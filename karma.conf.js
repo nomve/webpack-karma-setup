@@ -73,7 +73,15 @@ module.exports = function(config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: [`Chrome`],
+        browsers: [`ChromeHeadless`, `FirefoxHeadless`],
+
+
+        customLaunchers: {
+            FirefoxHeadless: {
+                base: `Firefox`,
+                flags: [`-headless`]
+            }
+        },
 
 
         // Continuous Integration mode
@@ -86,7 +94,7 @@ module.exports = function(config) {
     };
 
     if (process.env.CI) { 
-        configuration.browsers = [`Chrome`, `Firefox`]; 
+        configuration.browsers = [`ChromeHeadless`, `FirefoxHeadless`]; 
         configuration.concurrency = 1;
         configuration.singleRun = true;
     }
