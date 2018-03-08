@@ -1,8 +1,9 @@
+sudo: required
 dist: trusty
 language: node_js
 
 node_js:
-  - "6"
+  - "node"
 
 before_install:
   - export DISPLAY=:99.0
@@ -25,3 +26,5 @@ cache:
 
 addons:
   firefox: latest
+  chrome: stable
+
