@@ -14,6 +14,7 @@ entry[npmPackage.name] = `./index.js`;
 module.exports = {
     context: path.resolve(__dirname, `./`),
     entry,
+    mode: `development`,
     output: {
         path: path.resolve(__dirname, `./dist`),
         filename: `[name].js`,
@@ -37,7 +38,7 @@ module.exports = {
                 options: {
                     cacheDirectory: true,
                     presets: [
-                        [`env`, {
+                        [`@babel/preset-env`, {
                             targets: {
                                 browsers
                             },
